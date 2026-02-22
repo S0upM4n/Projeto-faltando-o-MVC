@@ -1,0 +1,17 @@
+{
+    "name": "user/teste-git",
+    "autoload": {
+        "psr-4": {
+            "User\\TesteGit\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "S0upM4n",
+            "email": "Fernandosiecm@gmail.com"
+        }
+    ],
+    "require": {
+        "ramsey/uuid": "4.9.2"
+    }
+}
