@@ -13,7 +13,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
 
     $login = false;
-    if ($user && isset($user['password']) && $password == $user['password']) {
+    if ($user && isset($user['password']) && password_verify($password, $user['password'])) {
         $login = true;
         session_start();
 
@@ -21,6 +21,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             $_SESSION['uuid'] = $user['uuid'];
             echo "Login bem-sucedido. UUID do usuário: " . $user['uuid'];
             header('Location: dashboard.php');
+            // var_dump($password);
+            // var_dump($user['password']);
         exit();
         }
 

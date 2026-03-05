@@ -13,17 +13,27 @@ $error = isset($_GET['error']);
             border-color: red;
         }
     </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-<form action="login.php" method="POST">
-<input type="text" name="username" placeholder="Username" required class="<?php if($error) echo 'error'; ?>">
-<input type="password" name="password" placeholder="Password" required class="<?php if($error) echo 'error'; ?>">
-<input type="submit" value="Send">
-<p><?php if($error){echo"Login ou senha não reconhecido";} ?></p>
-</form>
-<p>Não possui uma conta? <a href="register.php">Cadastre-se</a></p>
+<header>
+    <h1>Bloco de notas:Login</h1>
+    <nav>
+        <a href="index.php">Home</a>
+        <a href="register.php">Register</a>
 
+    </nav>
+</header><br><br><br>   
+
+<div style="width: 60%; display: flex; flex-direction: column ; align-items: center; height: 40vh; justify-content: center; background-color: bisque; margin:auto">
+    <form action="login.php" method="POST">
+    <input type="text" name="username" placeholder="Username" required class="<?php if($error) echo 'error'; ?>">
+    <input type="password" name="password" placeholder="Password" required class="<?php if($error) echo 'error'; ?>">
+    <input type="submit" value="Send">
+    <p><?php if($error){echo"Login ou senha não reconhecido";} ?></p>
+    </form>
+    <p>Não possui uma conta? <a href="register.php">Cadastre-se</a></p>
+</div>
 
 </body>
 </html>

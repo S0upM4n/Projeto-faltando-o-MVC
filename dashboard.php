@@ -7,7 +7,9 @@
     <title>anotações</title>
 </head>
 <body>
-    <h1>Bem-vindo ao sistema de anotações!</h1>
+    <header style="text-align: center; background-color: red; padding: 20px;">
+        <h1>Bem-vindo ao sistema de anotações!</h1>
+    </header>
     <h3>UUID do usuário: <?php echo isset($_SESSION['uuid']) ? htmlspecialchars($_SESSION['uuid']) : ''; ?></h3>
     <p>Aqui você pode criar, editar e excluir suas anotações.</p>
     <p><a href="logout.php">Sair</a></p>

@@ -6,7 +6,7 @@ $pdo=new PDO('mysql:host=localhost;dbname=notes','root','');
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
     $username = $_POST['username'];
-    $password = $_POST['password']; // ← plain password here
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // ← hashed password here
     $uuid = Uuid::uuid4();
     $stmt = $pdo->prepare('INSERT INTO users (username, password,uuid) VALUES (?, ?,?);');
     $stmt->execute([$username, $password,$uuid->toString()]);
